@@ -602,6 +602,9 @@
       .best-offers {
         padding: 45px 0;
       }
+      #bestSelector [option][selected] {
+        outline: none;
+      }
       /* Big action*/
       .big-action {
         padding: 45px 0;
@@ -877,6 +880,8 @@
         #activity{
           max-height: 210px;
         }
+      }
+      @media only screen and (min-width: 510px) {
         .city-form__list{
           column-count:2;  
         }
@@ -1150,12 +1155,12 @@
           </amp-carousel>
           <div class="dots">
             <span class="current" [class]="activitySelector.current % 2 == 0 ? 'current' : ''"
-              tabindex="0"
+              tabindex="-1"
               role="button"
               on="tap:activity.goToSlide(index=0)"
             ></span>
             <span [class]="activitySelector.current % 2 == 1 ? 'current' : ''"
-              tabindex="0"
+              tabindex="-1"
               role="button"
               on="tap:activity.goToSlide(index=1)"
             ></span>
@@ -1347,17 +1352,17 @@
         </amp-carousel>
         <div class="dots">
           <span class="current" [class]="popularSelector.current == 0 ? 'current' : ''"
-            tabindex="0"
+            tabindex="-1"
             role="button"
             on="tap:popular.goToSlide(index=0)"
           ></span>
           <span [class]="popularSelector.current == 1 ? 'current' : ''"
-            tabindex="0"
+            tabindex="-1"
             role="button"
             on="tap:popular.goToSlide(index=1)"
           ></span>
           <span [class]="popularSelector.current == 2 ? 'current' : ''"
-            tabindex="0"
+            tabindex="-1"
             role="button"
             on="tap:popular.goToSlide(index=2)"
           ></span>
