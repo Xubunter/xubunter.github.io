@@ -20,33 +20,33 @@
       @font-face {
         font-family: 'Gotham Pro';
         font-display: swap;
-        src: url('./fonts/GothamPro-Light.eot');
+        src: url('fonts/GothamPro-Light.eot');
         src: local('Gotham Pro Light'), local('GothamPro-Light'),
-          url('./fonts/GothamPro-Light.eot?#iefix') format('embedded-opentype'),
-          url('./fonts/GothamPro-Light.woff') format('woff'),
-          url('./fonts/GothamPro-Light.ttf') format('truetype');
+          url('fonts/GothamPro-Light.eot?#iefix') format('embedded-opentype'),
+          url('fonts/GothamPro-Light.woff') format('woff'),
+          url('fonts/GothamPro-Light.ttf') format('truetype');
         font-weight: 300;
         font-style: normal;
       }
       @font-face {
         font-family: 'Gotham Pro';
         font-display: swap;
-        src: url('./fonts/GothamPro.eot');
+        src: url('fonts/GothamPro.eot');
         src: local('Gotham Pro'), local('GothamPro'),
-          url('./fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
-          url('./fonts/GothamPro.woff') format('woff'),
-          url('./fonts/GothamPro.ttf') format('truetype');
+          url('fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+          url('fonts/GothamPro.woff') format('woff'),
+          url('fonts/GothamPro.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
       }
       @font-face {
         font-family: 'Gotham Pro';
         font-display: swap;
-        src: url('./fonts/GothamProNarrow-Medium.eot');
+        src: url('fonts/GothamProNarrow-Medium.eot');
         src: local('Gotham Pro Narrow Medium'), local('GothamProNarrow-Medium'),
-          url('./fonts/GothamProNarrow-Medium.eot?#iefix') format('embedded-opentype'),
-          url('./fonts/GothamProNarrow-Medium.woff') format('woff'),
-          url('./fonts/GothamProNarrow-Medium.ttf') format('truetype');
+          url('fonts/GothamProNarrow-Medium.eot?#iefix') format('embedded-opentype'),
+          url('fonts/GothamProNarrow-Medium.woff') format('woff'),
+          url('fonts/GothamProNarrow-Medium.ttf') format('truetype');
         font-weight: 500;
         font-style: normal;
       }
@@ -103,7 +103,7 @@
         border: none;
         resize: none;
       }
-      .input-field {
+      .input-field, .input-field-secondary {
         width: 100%;
         background-color: #fff;
         border-radius: 30px;
@@ -116,8 +116,16 @@
         line-height: 19px;
         position: relative;
       }
+      .input-field{
+        color: #7d7d7d;
+      }
+      .input-field-secondary, .textarea-secondary {
+        border: 1px solid #612366;
+        color: #363636;
+      }
       textarea::placeholder, 
-      .input-field::placeholder {
+      .input-field::placeholder,
+      .input-field-secondary::placeholder {
         font-size: 18px;
         font-weight: 300;
         color: #7d7d7d;
@@ -155,7 +163,7 @@
         margin-top: 10px;
       }
       .btn-search {
-        background: #ffc600 url(./assets/icons-sprite.png) -40px 13px no-repeat;
+        background: #ffc600 url(assets/icons-sprite.png) -40px 13px no-repeat;
         color: #636363;
         padding-left: 44px;
         font-size: 18px;
@@ -163,7 +171,7 @@
       .btn-search-secondary {
         width: 63px;
         height: 41px;
-        background: #612366 url(./assets/icons-sprite.png) -260px -275px no-repeat;
+        background: #612366 url(assets/icons-sprite.png) -260px -275px no-repeat;
       }
       .lightbox {
         position: absolute;
@@ -175,11 +183,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 200;
       }
       .lightbox-content {
         position: absolute;
         width: 100%;
-        height: 100%;
+        max-height: 100%;
       }
       .lightbox-base {
         position: fixed;
@@ -250,7 +259,7 @@
       }
       /* Main */
       .main {
-        margin-top: 68px;
+        margin-top: 30px;
         background: #612366;
         padding-top: 110px;
         text-align: center;
@@ -350,9 +359,6 @@
         text-align: center;
         padding: 45px 0 25px;
       }
-      .additional-list {
-        
-      }
       .additional-item {
         margin-bottom: 20px;
       }
@@ -422,7 +428,7 @@
       amp-accordion section:not([expanded]) .show-less {
         display: none;
       }
-      .i-amphtml-accordion-header {
+      .about-read-more {
         border: none;
         background: none;
         color: #08a8e3;
@@ -581,7 +587,7 @@
         border: solid 1px;
       }
       .radiobtn-container .checkbox::after {
-        content: url(./assets/checkbox_v.png);
+        content: url(assets/checkbox_v.png);
         display: none;
         position: relative;
       }
@@ -595,9 +601,6 @@
       /* Best offers*/
       .best-offers {
         padding: 45px 0;
-      }
-      .best-item {
-
       }
       /* Big action*/
       .big-action {
@@ -692,10 +695,21 @@
         font-size: 24px;
         color: #363636; 
       }
+      .provider-modal{
+        position: relative;
+        flex-grow: 1;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .provider-modal-title {
+        border-bottom: 1px solid #ebebeb;
+        padding-bottom: 15px;
+      }
       /* Icons */
       .icon {
         display: inline-block;
-        background: url(/assets/icons-sprite.png) no-repeat;
+        background: url(assets/icons-sprite.png) no-repeat;
       }
       .icon-menu {
         width: 30px;
@@ -791,7 +805,7 @@
         display: inline-block;
         width: 20px;
         height: 26px;
-        background: url(./assets/balloon.png) no-repeat;
+        background: url(assets/balloon.png) no-repeat;
       }
       .icon-communication {
         width: 32px;
@@ -811,6 +825,8 @@
       .color-818b96{color:#818b96}
       .color-white{color:#fff}
       .color-link{color:#08a8e3}
+      .color-612366{color:#612366}
+      .w100{width: 100%;}
       .m0{margin: 0;}
       .mt6{margin-top: 6px;}
       .mt10{margin-top: 10px;}
@@ -860,6 +876,9 @@
       @media only screen and (min-width: 510px) {
         #activity{
           max-height: 210px;
+        }
+        .city-form__list{
+          column-count:2;  
         }
         .additional {
           padding: 45px 0;
@@ -1037,14 +1056,14 @@
       <div class="b-center">
         <div class="main__title">Поиск провайдера</div>
         <div class="main_form">
-          <form method="POST" id="search">
-            <button on="tap:city-form" class="input-field for-city mt30">
+          <form method="POST" id="search" action-xhr="https://example.com/myform" >
+            <button type="button" on="tap:city-form" class="input-field for-city mt30">
               <i class="icon-geo-yellow mr5"></i>
               <span class="for-city__link">Санкт-Петербург и область</span>
             </button>
-            <input type="text" name="street" class="input-field mt30" title="Укажите улицу" placeholder="Введите название улицы">
-            <input type="text" name="building" class="input-field mt30" title="Укажите дом" placeholder="Номер дома">
-            <button class="btn btn-search mt30">Поиск</button>
+            <input type="text" name="street" class="input-field mt30" title="Укажите улицу" placeholder="Введите название улицы" required>
+            <input type="text" name="building" class="input-field mt30" title="Укажите дом" placeholder="Номер дома" required>
+            <button type="submit" class="btn btn-search mt30">Поиск</button>
           </form>
         </div>
         <div class="main__activity">
@@ -1074,19 +1093,19 @@
               <h3 class="last-activity-title">Последняя активность</h3>
               <ul class="last-activity">
                 <li class="last-activity-item">
-                  <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                  <amp-img class="last-activity-item__logo" src="assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
                   <h4 class="last-activity-item__title">Для интернета</h4>
                   <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
                   <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
                 </li>
                 <li class="last-activity-item">
-                    <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                    <amp-img class="last-activity-item__logo" src="assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
                     <h4 class="last-activity-item__title">Для интернета</h4>
                     <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
                     <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
                 </li>
                 <li class="last-activity-item">
-                    <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                    <amp-img class="last-activity-item__logo" src="assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
                     <h4 class="last-activity-item__title">Для интернета</h4>
                     <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
                     <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
@@ -1109,19 +1128,19 @@
                 <h3 class="last-activity-title">Последняя активность</h3>
                 <ul class="last-activity">
                   <li class="last-activity-item">
-                    <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                    <amp-img class="last-activity-item__logo" src="assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
                     <h4 class="last-activity-item__title">Для интернета везде</h4>
                     <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
                     <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
                   </li>
                   <li class="last-activity-item">
-                      <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                      <amp-img class="last-activity-item__logo" src="assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
                       <h4 class="last-activity-item__title">Для интернета везде</h4>
                       <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
                       <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
                   </li>
                   <li class="last-activity-item">
-                      <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                      <amp-img class="last-activity-item__logo" src="assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
                       <h4 class="last-activity-item__title">Для интернета везде</h4>
                       <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
                       <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
@@ -1210,7 +1229,7 @@
         <p class="about-text">Интернет – неотъемлемый атрибут современного человека. Без него зачастую невозможна работа и общение. Мы привыкли задавать «мировой паутине» сотни вопросов и оперативно получать на них ответы. Для очень многих Интернет – единственный источник информации. А потому, когда качество услуг интернет-провайдера находится не на должном уровне, то клиент начинает испытывать дискомфорт...</p>
         <amp-accordion class="sample" disable-session-states>
           <section>
-            <h4><span class="show-more">Читать полностью</span> <span class="show-less">Скрыть</span></h4>
+            <h4 class="about-read-more"><span class="show-more">Читать полностью</span> <span class="show-less">Скрыть</span></h4>
             <p class="about-text">
                 ...и раздражение. Благо, в наше время жители крупных городов могут выбирать, с помощью какой компании им подключиться к сети. При этом определиться бывает непросто, так как, к примеру, интернет-провайдеры Санкт-Петербурга исчисляются десятками. Цель нашего ресурса – облегчить вам муки выбора. <br>В первую очередь необходимо определить, что вы собираетесь делать в Интернете. Если ваши потребности ограничиваются просмотром сайтов и отправлением электронной почты, то будет вполне достаточно скорости в 8 Мбит/с. Большинство онлайн игр, Skype или закачка небольших файлов потребуют 25 Мбит/с, а просмотр фильмов и активное скачивание больших объёмов информации предполагают скорость от 40 Мбит/с. <br>Среди интернет-провайдеров Санкт-Петербурга таких, которые предлагают подобные технические параметры подключения немало. Большинство из них используют технологии выделенной отптиковолоконной линии. В связи с этим возникает необходимость выяснить, какие действуют интернет-провайдеры по адресу вашего проживания. Если вы задались этим вопросом, то наш сайт – это лучшее место, где вы сможете получить на него ответ. У нас вы легко определите список интернет-провайдеров, которые готовы предоставить вам услуги, и сузите круг своих поисков. Впрочем, список доступных интернет-провайдеров по адресу предполагаемого проведения интернета может оказаться немал. Помимо технических параметров подключения и надёжности соединения мы рекомендуем вам также обратить внимание на ряд деталей: стоимость услуг, механизм возмещения времени, в течение которого Интернет отсутствовал, наличие и качество технической поддержки, список дополнительных услуг. Мы уверены, что тот уровень сервиса, который доступен сейчас в Санкт-Петербурге, удовлетворит любые запросы, а мы поможем вам без лишних затрат времени найти подходящего провайдера.
             </p>
@@ -1238,7 +1257,7 @@
             <p class="about-item__caption">Удобный выбор провайдера и тарифа в течение 10 минут</p>
           </li>
         </ul>
-        <button class="btn btn-transparent btn-about">Заказать консультацию специалиста</button>
+        <button class="btn btn-transparent btn-about" on="tap:provider-modal.open">Заказать консультацию специалиста</button>
       </div>
     </section>
     <section class="providers">
@@ -1251,22 +1270,22 @@
         <ul class="provider-list">
           <li class="provider-item">
             <a href="#">
-              <amp-img  layout="fixed" height="95" width="202" src="./assets/rt.gif"></amp-img>
+              <amp-img  layout="fixed" height="95" width="202" src="assets/rt.gif"></amp-img>
             </a>
           </li>
           <li class="provider-item">
             <a href="#">
-              <amp-img  layout="fixed" height="95" width="202" src="./assets/sumtel.gif"></amp-img>
+              <amp-img  layout="fixed" height="95" width="202" src="assets/sumtel.gif"></amp-img>
             </a>
           </li>
           <li class="provider-item">
             <a href="#">
-              <amp-img  layout="fixed" height="95" width="202" src="./assets/nbn.gif"></amp-img>
+              <amp-img  layout="fixed" height="95" width="202" src="assets/nbn.gif"></amp-img>
             </a>
           </li>
           <li class="provider-item">
             <a href="#">
-              <amp-img  layout="fixed" height="95" width="202" src="./assets/sky.gif"></amp-img>
+              <amp-img  layout="fixed" height="95" width="202" src="assets/sky.gif"></amp-img>
             </a>
           </li>  
         </ul>
@@ -1280,7 +1299,6 @@
           id="popular" 
           layout="fixed-height"
           height="412" 
-
           type="slides"
           autoplay
           delay="3000"
@@ -1290,7 +1308,7 @@
           <div class="popular-item">
             <h3 class="popular-item__title">Для интернета везде</h3>
             <div>
-              <amp-img height="110" width="234" src="./assets/rt.gif"></amp-img>
+              <amp-img height="110" width="234" src="assets/rt.gif"></amp-img>
               <p class="popular-item__desc">Скорость: 150 мбит/с</p>
               <p class="popular-item__desc">Цена: 598руб. мес.</p>
               <span class="popular-item__internet">Моно-интернет</span>
@@ -1303,7 +1321,7 @@
           <div class="popular-item">
             <h3 class="popular-item__title">Для интернета везде</h3>
             <div>
-              <amp-img height="110" width="234" src="./assets/rt.gif"></amp-img>
+              <amp-img height="110" width="234" src="assets/rt.gif"></amp-img>
               <p class="popular-item__desc">Скорость: 150 мбит/с</p>
               <p class="popular-item__desc">Цена: 598руб. мес.</p>
               <span class="popular-item__internet">Моно-интернет</span>
@@ -1316,7 +1334,7 @@
           <div class="popular-item">
             <h3 class="popular-item__title">Для интернета везде</h3>
             <div>
-              <amp-img height="110" width="234" src="./assets/rt.gif"></amp-img>
+              <amp-img height="110" width="234" src="assets/rt.gif"></amp-img>
               <p class="popular-item__desc">Скорость: 150 мбит/с</p>
               <p class="popular-item__desc">Цена: 598руб. мес.</p>
               <span class="popular-item__internet">Моно-интернет</span>
@@ -1344,7 +1362,7 @@
             on="tap:popular.goToSlide(index=2)"
           ></span>
         </div>
-        <button class="btn btn-transparent-secondary popular__btn">Заказать консультацию специалиста</button>
+        <button on="tap:provider-modal.open" class="btn btn-transparent-secondary popular__btn">Заказать консультацию специалиста</button>
       </div>
     </section>
     <section class="consultation">
@@ -1352,7 +1370,7 @@
         <h2 class="consultation__title">Начни экономить на интернете!</h2>
         <p class="consultation__subtitle">Закажите обратный звонок специалиста, который даст Вам ответы на все возникшие вопросы, <br> а также бесплатно проконсультирует Вас по самым свежим тарифам!</p>
         <div class="consultation-form">
-          <form method="POST">
+          <form name="SIMPLE_FORM_1" action-xhr="/" method="POST" enctype="multipart/form-data">
             <label class="radiobtn-container">
               Узнать о новом подключении
               <input type="radio" checked="checked" name="form_radio_SIMPLE_QUESTION_697" value="122">
@@ -1364,9 +1382,9 @@
               <span class="checkmark"></span>
             </label>
             <div>
-              <input name="name" class="input-field mt10 consultation-form__input" required
+              <input name="form_text_1" class="input-field mt10 consultation-form__input" required
                 type="text" placeholder="Ваше имя">
-              <input name="phone" class="input-field mt10 consultation-form__input" required
+              <input name="form_text_2" class="input-field mt10 consultation-form__input" required
                 type="tel" placeholder="+7 (000) 000-0000" mask="+7_(000)_000-0000"
                 pattern="^[0-9\+\s\-\(\)]{17}$"
               >
@@ -1375,7 +1393,7 @@
               <label class="inline radiobtn-container">
                 Я соглашаюсь с 
                 <a class="term-link" href="politika-konfidencialnosti/">политикой конфиденциальности</a>
-                <input type="checkbox" checked name="form_radio_SIMPLE_QUESTION_697" value="123">
+                <input type="checkbox" checked name="form_checkbox_agree[]" value="85">
                 <span class="checkbox"></span>
               </label>
             </div>
@@ -1401,7 +1419,7 @@
         >
           <div class="best-item">
             <div>
-              <amp-img layout="responsive" height="196" width="366" src="./assets/inet.webp"></amp-img>
+              <amp-img layout="responsive" height="196" width="366" src="assets/inet.webp"></amp-img>
               <p>Виртуальная АТС и номера 8800 бесплатно, при подключении любого интернет-провайдера!</p>
             </div>
             <div class="best-item__btns">
@@ -1415,7 +1433,7 @@
           </div>
           <div class="best-item">
             <div>
-              <amp-img layout="responsive" height="196" width="366" src="./assets/inet.webp"></amp-img>
+              <amp-img layout="responsive" height="196" width="366" src="assets/inet.webp"></amp-img>
               <p>Виртуальная АТС и номера 8800 бесплатно, при подключении любого интернет-провайдера!</p>
             </div>
             <div class="best-item__btns">
@@ -1429,7 +1447,7 @@
           </div>
           <div class="best-item">
             <div>
-              <amp-img layout="responsive" height="196" width="366" src="./assets/inet.webp"></amp-img>
+              <amp-img layout="responsive" height="196" width="366" src="assets/inet.webp"></amp-img>
               <p>Виртуальная АТС и номера 8800 бесплатно, при подключении любого интернет-провайдера!</p>
             </div>
             <div class="best-item__btns">
@@ -1449,9 +1467,9 @@
           <span option="1"></span>
           <span option="2"></span>
         </amp-selector>
-        <button class="btn btn-transparent-secondary mt20">
+        <a class="btn btn-transparent-secondary mt20 inline-block" href="/msk/aktsii-internet-provayderov/">
           Смотреть все акции от провайдеров
-        </button>
+        </a>
       </div>
     </section>
     <section class="big-action text-align-center">
@@ -1474,10 +1492,10 @@
         </div>
         <div class="big-action__form">
           <h3 class="color-white m0 f22 f400 ttnone">Выберете лучший интернет</h3>
-          <form method="POST">
-            <input type="text" class="input-field mt20 big-action__field" placeholder="Введите название улицы">
+          <form method="POST" action-xhr="mail.php">
+            <input type="text" name="name" class="input-field mt20 big-action__field" placeholder="Введите название улицы">
             <div class="big-action__input">
-              <input type="text" class="input-field mt10 " placeholder="Номер дома">
+              <input type="text" name="house" class="input-field mt10 " placeholder="Номер дома">
               <button type="submit" class="btn btn-search-secondary"></button>
             </div>
           </form>
@@ -1493,9 +1511,9 @@
           <li class="last-connect-item mt20">
             <div class="ttnone f400 ">Скоростной с ТВ</div>
             <div class="last-connect-item__desc mt20">
-              <amp-img width="100" height="47" src="./assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
+              <amp-img width="100" height="47" src="assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
               <p class="color-7d7d7d m0 mt20">Скорость: <span class="color-363636">300 мбит/c</span></p>
-              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 руб./мес</span></p>
+              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 рубмес</span></p>
               <i class="icon icon-geo mt20"></i>
               <p class="f14">г. Москва</p>
             </div>
@@ -1503,9 +1521,9 @@
           <li class="last-connect-item mt20">
             <div class="ttnone f400 ">Скоростной с ТВ</div>
             <div class="last-connect-item__desc mt20">
-              <amp-img width="100" height="47" src="./assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
+              <amp-img width="100" height="47" src="assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
               <p class="color-7d7d7d m0 mt20">Скорость: <span class="color-363636">300 мбит/c</span></p>
-              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 руб./мес</span></p>
+              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 рубмес</span></p>
               <i class="icon icon-geo mt20"></i>
               <p class="f14">г. Москва</p>
             </div>
@@ -1513,9 +1531,9 @@
           <li class="last-connect-item mt20">
             <div class="ttnone f400 ">Скоростной с ТВ</div>
             <div class="last-connect-item__desc mt20">
-              <amp-img width="100" height="47" src="./assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
+              <amp-img width="100" height="47" src="assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
               <p class="color-7d7d7d m0 mt20">Скорость: <span class="color-363636">300 мбит/c</span></p>
-              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 руб./мес</span></p>
+              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 рубмес</span></p>
               <i class="icon icon-geo mt20"></i>
               <p class="f14">г. Москва</p>
             </div>
@@ -1523,9 +1541,9 @@
           <li class="last-connect-item mt20">
             <div class="ttnone f400 ">Скоростной с ТВ</div>
             <div class="last-connect-item__desc mt20">
-              <amp-img width="100" height="47" src="./assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
+              <amp-img width="100" height="47" src="assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
               <p class="color-7d7d7d m0 mt20">Скорость: <span class="color-363636">300 мбит/c</span></p>
-              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 руб./мес</span></p>
+              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 рубмес</span></p>
               <i class="icon icon-geo mt20"></i>
               <p class="f14">г. Москва</p>
             </div>
@@ -1538,33 +1556,33 @@
         <h2 class="f30 f400 color-white">Остались вопросы? <br> задайте их!</h2>
         <p>Если у Вас остались какие-либо вопросы, задайте их, наши консультанты перезвонят Вам <br> в течение 10 минут и ответят на все интересующие вопросы.</p>
       </div>
-      <form method="POST">
+      <form name="SIMPLE_FORM_2" method="POST" action-xhr="/" enctype="multipart/form-data">
         <label class="radiobtn-container">
           Узнать о новом подключении
-          <input type="radio" checked="checked" name="form_radio_SIMPLE_QUESTION_697" value="122">
+          <input type="radio" checked="checked" name="form_radio_SIMPLE_QUESTION_730" value="128">
           <span class="checkmark"></span>
         </label>
         <label class="radiobtn-container">
           Узнать о смене тарифа
-          <input type="radio" name="form_radio_SIMPLE_QUESTION_697" value="123">
+          <input type="radio" name="form_radio_SIMPLE_QUESTION_730" value="129">
           <span class="checkmark"></span>
         </label>
         <div class="question-inputs">
-          <input name="name" class="input-field mt10 question-input" required
+          <input name="form_text_3" class="input-field mt10 question-input" required
             type="text" placeholder="Ваше имя*">
-          <input name="phone" class="input-field mt10 question-input" required
+          <input name="form_text_4" class="input-field mt10 question-input" required
             type="tel" placeholder="Ваш телефон*" mask="+7_(000)_000-0000"
             pattern="^[0-9\+\s\-\(\)]{17}$"
           >
-          <input name="email" class="input-field mt10 question-input" required
-            type="text" placeholder="Email">
+          <input name="form_email_5" class="input-field mt10 question-input" required
+            type="email" placeholder="Email">
         </div>
         <textarea name="comment" class="mt10" placeholder="Введите Ваш коментарий" cols="30" rows="10"></textarea>
         <div class="mt10">
           <label class="inline radiobtn-container">
             Я соглашаюсь с 
             <a class="term-link color-white" href="politika-konfidencialnosti/">политикой конфиденциальности</a>
-            <input type="checkbox" checked name="form_radio_SIMPLE_QUESTION_697" value="123">
+            <input type="checkbox" checked name="form_checkbox_SIMPLE_QUESTION_604[]" value="123">
             <span class="checkbox"></span>
           </label>
         </div>
@@ -1572,16 +1590,16 @@
       </form>
       <div class="social-block mt20">
         <a href="https://vk.com/inetme" class="mr5">
-          <amp-img src="./assets/vk.webp" width="40" height="40"></amp-img>
+          <amp-img src="assets/vk.webp" width="40" height="40"></amp-img>
         </a>
         <a href="https://www.facebook.com/inetme/" class="mr5">
-          <amp-img src="./assets/facebook.webp" width="40" height="40"></amp-img>
+          <amp-img src="assets/facebook.webp" width="40" height="40"></amp-img>
         </a>
         <a class="mr5" href="https://twitter.com/intent/tweet?original_referer=https://inetme.ru/&text=Поиск интернет-провайдеров по адресу&url=https://inetme.ru/">
-          <amp-img src="./assets/twitter.webp" width="40" height="40"></amp-img>
+          <amp-img src="assets/twitter.webp" width="40" height="40"></amp-img>
         </a>
         <a href="http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=https://inetme.ru/">
-          <amp-img src="./assets/ok.webp" width="40" height="40"></amp-img>
+          <amp-img src="assets/ok.webp" width="40" height="40"></amp-img>
         </a>
       </div>
     </section>
@@ -1589,7 +1607,7 @@
       <div class="b-center">
         <h2 class="f28 f400 ttnone color-363636">Поиск доступных к подключению интернет провайдеров</h2>
         <div class="main_form">
-          <form method="POST" id="search">
+          <form method="POST" id="search" action-xhr="/">
             <button on="tap:city-form" class="input-field for-city mt30">
               <i class="icon-geo-yellow mr5"></i>
               <span class="for-city__link">Санкт-Петербург и область</span>
@@ -1603,7 +1621,7 @@
     </section>
     <footer>
       <div class="footer text-align-center">
-        <amp-img class="footer-logo" width="232" height="68" src="./assets/logo.png"></amp-img>
+        <amp-img class="footer-logo" width="232" height="68" src="assets/logo.png"></amp-img>
         <div class="b-center">
           <ul class="footer-menu">
             <li class="footer-menu__item"><a class="ttup f12 color-link tdnone" href="/spb/aktsii-internet-provayderov/" title="Акции от провайдеров">Акции от провайдеров</a></li>
@@ -1646,11 +1664,11 @@
         <div class="lightbox-content p15 mt40">
           <div class="city-form">
             <a role="button" class="close-reveal-modal" tabindex="-0" on="tap:city-form.close">×</a>
-            <form id="city" method="POST">
-              <amp-autocomplete filter="substring" src="js/city.json" on="select:city.submit">
-                <input>
+            <form id="city" method="POST" action-xhr="/">
+              <amp-autocomplete class="w100" filter="substring" src="js/city.json" on="select:city.submit">
+                <input class="w100">
               </amp-autocomplete>
-              <div class="mt20">
+              <div class="mt20 city-form__list">
                 <li class="dontsplit">
                     <div class="city-sym">А</div>
                     <ul class="cities-sym">
@@ -1843,5 +1861,49 @@
         
       </div>
     </amp-lightbox>
+
+    <amp-lightbox id="provider-modal" layout="nodisplay" scrollable>
+        <div class="lightbox">
+          <div class="lightbox-base" role="button" tabindex="-1" on="tap:provider-modal.close"></div>
+          <div class="lightbox-content p15 mt40">
+            <div class="provider-modal">
+              <a role="button" class="close-reveal-modal" tabindex="-0" on="tap:provider-modal.close">×</a>
+              <div>
+                <p class="f24 text-align-center provider-modal-title">Консультация</p>
+                <form name="SIMPLE_FORM_4" method="POST" action-xhr="/" enctype="multipart/form-data">
+                  <label class="radiobtn-container">
+                    Узнать о новом подключении
+                    <input type="radio" checked="checked" name="form_radio_SIMPLE_QUESTION_697" value="122">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="radiobtn-container">
+                    Узнать о смене тарифа
+                    <input type="radio" name="form_radio_SIMPLE_QUESTION_697" value="123">
+                    <span class="checkmark"></span>
+                  </label>
+                  <div class="question-inputs">
+                    <input name="name" class="input-field-secondary mt10 question-input" required
+                      type="text" placeholder="Ваше имя*">
+                    <input name="phone" class="input-field-secondary mt10 question-input" required
+                      type="tel" placeholder="Ваш телефон*" mask="+7_(000)_000-0000"
+                      pattern="^[0-9\+\s\-\(\)]{17}$"
+                    >
+                  </div>
+                  <textarea name="comment" class="textarea-secondary mt10" placeholder="Введите Ваш коментарий" cols="30" rows="3"></textarea>
+                  <div class="mt10">
+                    <label class="inline radiobtn-container">
+                      Я соглашаюсь с 
+                      <a class="term-link color-612366" href="politika-konfidencialnosti/">политикой конфиденциальности</a>
+                      <input type="checkbox" checked name="form_radio_SIMPLE_QUESTION_697" value="123">
+                      <span class="checkbox"></span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-secondary btn-question-form mt40 f400 f18 w100">Отправить</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </amp-lightbox>
   </body>
 </html>
