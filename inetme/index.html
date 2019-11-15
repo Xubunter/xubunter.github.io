@@ -1,0 +1,1847 @@
+<!doctype html>
+<html ⚡ lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="This is the AMP Boilerplate.">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-font" src="https://cdn.ampproject.org/v0/amp-font-0.1.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-element="amp-inputmask" src="https://cdn.ampproject.org/v0/amp-inputmask-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script async custom-element="amp-autocomplete" src="https://cdn.ampproject.org/v0/amp-autocomplete-0.1.js"></script>
+    <!-- Import other AMP Extensions here -->
+    <style amp-custom>
+      @font-face {
+        font-family: 'Gotham Pro';
+        font-display: swap;
+        src: url('./fonts/GothamPro-Light.eot');
+        src: local('Gotham Pro Light'), local('GothamPro-Light'),
+          url('./fonts/GothamPro-Light.eot?#iefix') format('embedded-opentype'),
+          url('./fonts/GothamPro-Light.woff') format('woff'),
+          url('./fonts/GothamPro-Light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Gotham Pro';
+        font-display: swap;
+        src: url('./fonts/GothamPro.eot');
+        src: local('Gotham Pro'), local('GothamPro'),
+          url('./fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+          url('./fonts/GothamPro.woff') format('woff'),
+          url('./fonts/GothamPro.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Gotham Pro';
+        font-display: swap;
+        src: url('./fonts/GothamProNarrow-Medium.eot');
+        src: local('Gotham Pro Narrow Medium'), local('GothamProNarrow-Medium'),
+          url('./fonts/GothamProNarrow-Medium.eot?#iefix') format('embedded-opentype'),
+          url('./fonts/GothamProNarrow-Medium.woff') format('woff'),
+          url('./fonts/GothamProNarrow-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body, input {
+        font-family: 'Gotham Pro', sans-serif;
+      }
+      a {
+        color: #363636; 
+      }
+      .b-center {
+        padding: 0 10px;
+        margin: 0 auto;
+        position: relative;
+      }
+      ol, ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      h2 {
+        font-size: 30px;
+        font-weight: 300;
+        color: #363636;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 5px 0;
+        line-height: 34px;
+      }
+      h3 {
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 300;
+        color: #363636;
+        text-align: center;
+      }
+      h4 {
+        font-size: 16px;
+        font-weight: 400;
+        color: #363636;
+        text-transform: uppercase;
+      }
+      textarea {
+        font-family: 'Gotham Pro', sans-serif;
+        padding: 10px 20px;
+        border-radius: 20px;
+        width: 100%;
+        font-size: 17px;
+        color: #7d7d7d;
+        border: none;
+        resize: none;
+      }
+      .input-field {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 30px;
+        height: 41px;
+        border: none;
+        padding: 0 20px;
+        color: #7d7d7d;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 19px;
+        position: relative;
+      }
+      textarea::placeholder, 
+      .input-field::placeholder {
+        font-size: 18px;
+        font-weight: 300;
+        color: #7d7d7d;
+        font-weight: 300;
+      }
+      /* Buttons */
+      .btn {
+        /*height: 41px;*/
+        font-size: 16px;
+        padding: 10px 26px;
+        border: none;
+        border-radius: 30px;
+      }
+      .btn-primary{
+        background-color: #ffc600;
+      }
+      .btn-secondary{
+        background-color: #612366;
+        color: #fff;
+      }
+      .btn-transparent{
+        background: none;
+        color: #fff;
+        border: 2px solid #fff;
+      }
+      .btn-transparent-secondary {
+        background: none;
+        color: #612366;
+        border: 1px solid #612366;
+      }
+      .btn-about {
+        font-size: 12px;
+        width: 90%;
+        max-width: 395px;
+        margin-top: 10px;
+      }
+      .btn-search {
+        background: #ffc600 url(./assets/icons-sprite.png) -40px 13px no-repeat;
+        color: #636363;
+        padding-left: 44px;
+        font-size: 18px;
+      }
+      .btn-search-secondary {
+        width: 63px;
+        height: 41px;
+        background: #612366 url(./assets/icons-sprite.png) -260px -275px no-repeat;
+      }
+      .lightbox {
+        position: absolute;
+        left: 0;  
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .lightbox-content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .lightbox-base {
+        position: fixed;
+        left: 0;  
+        top: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .6;
+        background: #000;
+      }
+      /* Header */
+      header {
+        
+        width: 100%;
+        background-color: #fff;
+        z-index: 90;
+        position: fixed;
+        top: 0;
+      }
+      .header {
+        padding: 16px 10px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header__contacts {
+        text-align: right;
+      }
+      .header__big-number {
+        font-size: 30px;
+      }
+      .header__work-time {
+        font-size: 11px;
+        font-weight: 300;
+        color: #7d7d7d;
+        margin: 0;
+        margin-right: 2px;
+      }
+      nav {
+        position: absolute;
+        background: #fff;
+        width: 100%;
+        overflow: hidden;
+        box-sizing: content-box;
+        z-index: -1;
+        transition: transform 0.3s ease;
+        transform-origin: 50% 0%;
+      }
+      .nav_hide {
+        transform: scaleY(0) translateY(-400px);
+      }
+      .nav_show{
+        transform: scaleY(1) translateY(0);
+      }
+      .nav-items {
+        width: 100%;
+        margin-bottom: 0;
+        margin-right: 0;
+        text-align: center;
+      }
+      .nav-items a {
+        display: block;
+        widows: 100%;
+        padding: 10px 0;
+        color: #363636;
+        text-decoration: none;  
+      }
+      /* Main */
+      .main {
+        margin-top: 68px;
+        background: #612366;
+        padding-top: 110px;
+        text-align: center;
+      }
+      .main__title {
+        font-size: 28px;
+        line-height: 28px;
+        text-align: center;
+        display: block;
+        color: #fff;
+      }
+      .for-city {
+        text-align: left;
+        padding: 8px 20px;
+        display: flex;
+        align-items: flex-end;
+        margin: 0;
+      }
+      .for-city__link{
+        border-bottom: 2px dotted;
+      }
+      .main__activity {
+        margin-top: 30px;
+        padding: 26px 0;
+        width: 100%;
+        background-color: #fff;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+      }
+      .dots {
+      text-align: center;
+      }
+      .dots span {
+      display: inline-block;
+      border: 2px solid #612366;
+      border-radius: 6px;
+      width: 11px;
+      height: 11px;
+      margin: 3px;
+      }
+      .dots [selected] {
+        background: #612366;
+      }
+      .dots .current {
+        background: #612366;
+      }
+      .client-counter {
+        letter-spacing: -2px;
+      }
+      .digit {
+        font-size: 37px;
+        padding: 8px 0;
+        display: inline-block;
+        height: 55px;
+        width: 37px;
+        box-shadow: 1px 1px 1px rgba(4,4,4,.35);
+        background-image: -webkit-gradient(linear,left bottom,left top,color-stop(.5,#f0f0f0),color-stop(.5,#ddd));
+        color: #000;
+        background-color: #d1d1d1;
+        border-radius: .2em;
+        text-align: center;
+      }
+      .client-counter__title {
+        padding: 0 16px;
+        font-size: 20px;
+      }
+      .last-activity{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        height: 90%;
+      }
+      .last-activity-title {
+        margin-top: 0;
+      }
+      .last-activity-item{
+        margin: 0 10px;
+        display: inline-block;
+      }
+      .last-activity-item__title{
+        margin: 0;
+      }
+      .last-activity-item__logo {
+        margin-bottom: 8px;
+        margin-top: 4px;
+      }
+      .last-activity-item__subtitle {
+        margin-top: 4px;
+        font-size: 11px;
+        font-weight: 400;
+        color: #7d7d7d;
+      }
+      /* Additional */
+      .additional {
+        background: #fbfbfb;
+        text-align: center;
+        padding: 45px 0 25px;
+      }
+      .additional-list {
+        
+      }
+      .additional-item {
+        margin-bottom: 20px;
+      }
+      .additional-item__title {
+        font-weight: 500;
+        color: #363636;
+        text-transform: none;
+        text-align: left;
+      }
+      .additional-item__subtitle {
+        margin: 8px 0;
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: 300;
+        color: #7d7d7d;
+      }
+      .additional-item__link {
+        font-size: 11px;
+        color: #08a8e3;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      .additional-item__wrapper {
+        text-decoration: none;
+      }
+      /* How connect */
+      .how-connect {
+        padding: 45px 0 25px;
+        text-align: center;
+        background: #ebebeb;
+      }
+      .how-connect__title {
+        margin-bottom: 45px;
+      }
+      .how-connect-item {
+        margin-bottom: 20px;
+      }
+      .how-connect-item__title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: #363636;
+      }
+      .how-connect-item__subtitle {
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: 400;
+        color: #363636;
+      }
+      /* About */
+      .about {
+        background: #612366;
+        padding: 45px 10px;
+        text-align: center;
+        color: #fff;
+      }
+      .about-title {
+        color: #fff;
+        font-weight: 400;
+      }
+      .about-text {
+        margin-bottom: 0;
+      }
+      amp-accordion section[expanded] .show-more {
+        display: none;
+      }
+      amp-accordion section:not([expanded]) .show-less {
+        display: none;
+      }
+      .i-amphtml-accordion-header {
+        border: none;
+        background: none;
+        color: #08a8e3;
+        text-transform: none;
+      }
+      .about-item {
+        margin-top: 20px;
+      }
+      .about-item__caption {
+        font-size: 14px;
+        line-height: 16px;
+      }
+      /* Providers */
+      .providers {
+        text-align: center;
+        padding: 45px 0;
+      }
+      .providers-title {
+        font-weight: 400;
+      }
+      .check-address {
+        color: #363636;
+        text-decoration: underline;
+      }
+      .provider-list {
+        margin-top: 20px;
+      }
+      .provider-item {
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        padding: 10px 0;
+        margin-bottom: 4px;
+      }
+      /* Popular hits*/
+      .popular {
+        padding: 45px 0;
+        text-align: center;
+        background: #f9f9f9;
+      }
+      .popular__title {
+        font-weight: 400;
+      }
+      .popular__subtitle {
+        color: #636363;
+      }
+      #popular{
+        margin-bottom: 10px;
+      }
+      .popular-item {
+        max-width: 276px;
+        border: 1px solid #d7d7d7;
+        border-radius: 20px;
+        padding: 20px;
+        background: #fff;
+      }
+      .popular-item__title {
+        margin-top: 0;
+        text-align: left;
+        font-size: 24px;
+        font-weight: 400;
+        color: #363636;
+        line-height: 26px;
+      }
+      .popular-item__desc {
+        font-size: 16px;
+        color: #363636;
+        line-height: 16px;
+        margin-top: 0;
+        margin-bottom: 7px;
+      }
+      .popular-item__internet {
+        padding: 7px 15px;
+        background: #ebebeb;
+        font-size: 14px;
+        color: #7d7d7d; 
+        border-radius: 30px;
+        margin-top: 14px;
+      }
+      .popular-item__btns {
+        margin-top: 23px;
+      }
+      .popular-item__btns > button {
+        margin-top: 6px;
+      }
+      .popular__btn {
+        margin-top: 16px;
+      }
+      /* Consultation */
+      .consultation {
+        background: #ffc600;
+        padding: 45px 0;
+        text-align: center;
+      }
+      .consultation__title {
+        font-size: 24px;
+        line-height: 26px;
+        color: #363636;
+        font-weight: 400;
+      }
+      .consultation__subtitle {
+        font-size: 16px;
+        line-height: 19px;
+        color: #754c24;
+      }
+      .radiobtn-container {
+        display: inline-block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 15px;
+        text-align: left;
+        user-select: none;
+        margin-right: 6px;
+      }
+      .radiobtn-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 18px;
+        width: 18px;
+        background-color: #eee;
+        border-radius: 50%;
+        border: solid 1px;
+      }
+      .radiobtn-container .checkmark::after {
+        content: "";
+        position: relative;
+        top: 2px;
+        left: 2px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #424242;
+      }
+      .radiobtn-container input[type="radio"]:checked ~ .checkmark{
+        background-color: #fff;
+      }
+      .radiobtn-container input:checked ~ .checkmark::after {
+        display: block;
+      }
+      .checkbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 18px;
+        width: 18px;
+        background-color: #eee;
+        border: 1px solid #612366;
+        border-radius: 5px;
+        border: solid 1px;
+      }
+      .radiobtn-container .checkbox::after {
+        content: url(./assets/checkbox_v.png);
+        display: none;
+        position: relative;
+      }
+      .radiobtn-container input:checked ~ .checkbox::after {
+        display: block;
+      }
+      .term-link {
+        color: #363636;
+        text-decoration: underline;
+      }
+      /* Best offers*/
+      .best-offers {
+        padding: 45px 0;
+      }
+      .best-item {
+
+      }
+      /* Big action*/
+      .big-action {
+        padding: 45px 0;
+        background: #612366;
+        color: #fff;
+      }
+      .big-action__form {
+        border: 1px solid #fff;
+        border-radius: 20px;
+        padding: 30px 18px;
+      }
+      .big-action__input {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+      /* Last connect */
+      .last-connect {
+        padding: 45px 0px;
+      }
+      .last-connect-item {
+        border: 1px solid #d7d7d7;
+        border-radius: 20px;
+        padding: 15px;
+      }
+      /* Question */
+      .question {
+        padding: 45px 16px;
+        background: #612366;
+      }
+      .btn-question-form{
+        min-width: 200px;
+        padding: 12px 28px;
+      }
+      /* Bottom maps */
+      .bottom-maps {
+        padding: 45px 0px;
+        background: #ebebeb;
+      }
+      /* Footer */
+      .footer {
+        padding: 30px 0;
+      }
+      .footer-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 6px;
+      }
+      .footer-menu__item {
+        padding: 6px;
+        text-align: center;
+        flex-basis: 49%;
+      }
+      .footer-contacts {
+        border-bottom: 1px solid #d7d7d7;
+      }
+      .footer-bottom {
+        padding: 20px 0;
+        background: #363636;
+        color: #818b96;
+      }
+      .footer-bottom__link {
+        font-size: 15px;
+        color: #818b96;
+        display: inline-block;
+        width: 100%;
+        margin-top: 15px;
+      }
+      /* Lightbox forms */
+      .close-reveal-modal{
+        font-size: 28px;
+        position: absolute;
+        top: 11px;
+        right: 12px;
+        color: #000;
+        font-weight: 300;
+        z-index: 10;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .city-form {
+        position: relative;
+        flex-grow: 1;
+        background: #fff;
+        padding: 50px;
+        border-radius: 10px;
+      }
+      .city-sym {
+        font-weight: 700;
+        font-size: 24px;
+        color: #363636; 
+      }
+      /* Icons */
+      .icon {
+        display: inline-block;
+        background: url(/assets/icons-sprite.png) no-repeat;
+      }
+      .icon-menu {
+        width: 30px;
+        height: 24px;
+        background-position: 0px -61px;
+      }
+      .icon-close {
+        width: 30px;
+        height: 24px;
+        background-position: -346px -493px;
+      }
+      .icon-time {
+        width: 8px;
+        height: 8px;
+        background-position: -17px 0;
+      }
+      .icon-additional-1 {
+        width: 97px;
+        height: 97px;
+        background-position: 0 -169px;
+      }
+      .icon-additional-2 {
+        width: 97px;
+        height: 97px;
+        background-position: -97px -169px;
+      }
+      .icon-additional-3 {
+        width: 97px;
+        height: 97px;
+        background-position: -195px -169px;
+      }
+      .icon-how-connect-1 {
+        width: 65px;
+        height: 65px;
+        background-position: 0 -276px;
+      }
+      .icon-how-connect-2 {
+        width: 65px;
+        height: 65px;
+        background-position: -65px -276px;
+      }
+      .icon-how-connect-3 {
+        width: 65px;
+        height: 65px;
+        background-position: -130px -276px;
+      }
+      .icon-about-1 {
+        width: 65px;
+        height: 65px;
+        background-position: -325px -95px;
+      }
+      .icon-about-2 {
+        width: 65px;
+        height: 65px;
+        background-position: -390px -95px;
+      }
+      .icon-about-3 {
+        width: 65px;
+        height: 65px;
+        background-position: -455px -95px;
+      }
+      .icon-about-4 {
+        width: 65px;
+        height: 65px;
+        background-position: -520px -95px;
+      }
+      .icon-about-5 {
+        width: 65px;
+        height: 65px;
+        background-position: -585px -95px;
+      }
+      .icon-big-action-1 {
+        width: 97px;
+        height: 98px;
+        background-position: -390px -169px;
+      }
+      .icon-big-action-2 {
+        width: 97px;
+        height: 98px;
+        background-position: -489px -169px;
+      }
+      .icon-big-action-3 {
+        width: 97px;
+        height: 98px;
+        background-position: -588px -169px;
+      }
+      .icon-geo {
+        width: 24px;
+        height: 32px;
+        background-position: -336px -275px;
+      }
+      .icon-geo-yellow {
+        display: inline-block;
+        width: 20px;
+        height: 26px;
+        background: url(./assets/balloon.png) no-repeat;
+      }
+      .icon-communication {
+        width: 32px;
+        height: 28px;
+        background-position: -390px -275px;
+      }
+      /**/
+      .inline {
+        display: inline;
+      }
+      .inline-block{display: inline-block;}
+      .text-align-center{text-align: center;}
+      .text-align-left{text-align: left;}
+      .color-636363{color:#636363}
+      .color-363636{color:#363636}
+      .color-7d7d7d{color:#7d7d7d}
+      .color-818b96{color:#818b96}
+      .color-white{color:#fff}
+      .color-link{color:#08a8e3}
+      .m0{margin: 0;}
+      .mt6{margin-top: 6px;}
+      .mt10{margin-top: 10px;}
+      .mt20{margin-top: 20px;}
+      .mt30{margin-top: 30px;}
+      .mt40{margin-top: 40px;}
+      .mr5{margin-right: 5px;}
+      .p15{padding: 15px;}
+      .px10{padding-left:10px; padding-right:10px}
+      .f12{font-size: 12px;}
+      .f13{font-size: 13px;}
+      .f14{font-size: 14px;}
+      .f18{font-size: 18px;}
+      .f22{font-size: 22px;}
+      .f24{font-size: 24px;}
+      .f28{font-size: 28px;}
+      .f30{font-size: 30px;}
+      .f400{font-weight: 400;}
+      .f500{font-weight: 500;}
+      .tdnone{text-decoration: none;}
+      .ttnone{text-transform: none;}
+      .ttup{text-transform: uppercase;}
+
+      @media only screen and (min-width: 710px) {
+        .about-list {
+          margin-top: 60px;
+        }
+        .about-list, .question-inputs {
+          display: flex;
+          justify-content: space-around;
+        }
+        .question-inputs input:not(:first-child){
+          margin-left: 10px;
+        }
+        .about-item {
+          margin: 0 6px;
+        }
+        .consultation-form__input,  .big-action__field, .big-action__input {
+          width: 34%;
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+        .big-action__input {
+          display: inline-flex;
+        }
+      }
+      @media only screen and (min-width: 510px) {
+        #activity{
+          max-height: 210px;
+        }
+        .additional {
+          padding: 45px 0;
+        }
+        .additional-list, .how-connect-list, .provider-list,
+        .big-action-list, .last-connect-list {
+          display: flex;
+          justify-content: space-around;
+        }
+        .additional-item, .how-connect-item, .provider-item,
+        .big-action-item {
+          margin: 0 6px;
+        }
+        .last-connect-list {
+          align-items: stretch;
+          flex-wrap: wrap;
+          margin: 10px 6px;
+        }
+        .last-connect-item {
+          flex-basis: 46%;
+        }
+        .big-action-item{
+          flex-basis: 33%;
+        }
+        .additional-item__title {
+          text-align: center;
+        }
+        .how-connect-list {
+          margin: 0 20px;
+        }
+        .how-connect__line {
+          position: relative;
+          width: 10%;
+        }
+        .how-connect__line::after {
+          content: "";
+          position: absolute;
+          top: 46%;
+          left: -200%;
+          right: -200%;
+          height: 1px;
+          opacity: 0.2;
+          background-color: #363636;
+        }
+        .btn-about {
+          font-size: 16px;
+        }
+        .provider-list {
+          margin-top: 45px;
+          flex-wrap: wrap;
+        }
+        .provider-item {
+          flex-basis: 46%;
+          margin-bottom: 20px;
+        }
+        .footer-menu__item {
+          flex-basis: 33%;
+        }
+        .footer-contacts {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+        .footer-contacts__phone{
+          margin-left: 20px;
+          font-size: 32px;
+        }
+        .footer-contacts__help {
+          font-size: 14px;
+          flex-basis: 90px;
+          margin-left: 6px;
+        }
+        .footer-contacts__time {
+          font-size: 18px;
+        }
+      }
+      @media only screen and (max-width: 480px) {
+        #best {
+          min-height: 440px;
+        }
+      }
+      @media only screen and (min-width: 650px) {
+        #best {
+          max-height: 560px;
+        }
+      }
+      @media only screen and (min-width: 730px) {
+        #best {
+          max-height: 600px;
+          max-width: 730px;
+          margin: 0 auto;
+        }
+      }
+      @media only screen and (max-height: 400px) {
+        .header {
+          padding-top: 6px;
+          padding-bottom: 6px;
+        }
+        .header__big-number{
+          font-size: 20px;
+        }
+      }
+     
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+ 
+    <link rel="canonical" href=".">
+    <title>My AMP Page</title>
+  </head>
+  <body>
+    <amp-font layout="nodisplay"
+      font-family="Gotham Pro"
+      timeout="2000">
+    </amp-font>
+    <amp-state id="header">
+        <script type="application/json">
+          { "hide": true }
+        </script>
+    </amp-state>
+    <amp-state id="activitySelector">
+      <script type="application/json">
+        { "current": 0 }
+      </script>
+    </amp-state>
+    <header>
+      <div class="b-center header">
+        <i tabindex='0' role="button" class="icon icon-menu" 
+          [class]="header.hide ? 'icon icon-menu' : 'icon icon-close'"
+          on="tap:AMP.setState({header: {hide: !header.hide}})"
+        ></i>
+        <div class="header__contacts">
+          <span>+7 (812) <span class="header__big-number">612-44-02</span></span>
+          <p class="header__work-time"><i class="icon icon-time"></i> Ежедневно с 9.00 до 22.00</div>
+        </div>
+      </div>
+      <nav class="nav_hide" [class]="header.hide ? 'nav_hide' : 'nav_show'">
+        <div class="b-center">
+          <ul>
+            <li class="nav-items">
+              <a href="/spb/internet-provayderi/" title="Список провайдеров">
+                Список провайдеров
+              </a>
+            </li>
+            <li class="nav-items">
+              <a href="/spb/aktsii-internet-provayderov/" title="Акции от провайдеров">
+                Акции от провайдеров
+              </a>
+            </li>
+            <li class="nav-items">
+              <a href="/spb/otzivi-o-provayderah/" title="Отзывы о провайдерах">
+                Отзывы о провайдерах
+              </a>
+            </li>
+            <li class="nav-items">
+              <a href="/spb/rating-internet-provayderov/" title="Рейтинг провайдеров">
+                Рейтинг провайдеров
+              </a>
+            </li>
+            <li class="nav-items">
+              <a href="/spb/internet-dlya-ur-lits/" title="Интернет для юр. лиц">
+                Интернет для юр. лиц
+              </a>
+            </li>
+            <li class="nav-items">
+              <a href="/add-provider/" title="Добавить провайдера">
+                Добавить провайдера
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section class="main">
+      <div class="b-center">
+        <div class="main__title">Поиск провайдера</div>
+        <div class="main_form">
+          <form method="POST" id="search">
+            <button on="tap:city-form" class="input-field for-city mt30">
+              <i class="icon-geo-yellow mr5"></i>
+              <span class="for-city__link">Санкт-Петербург и область</span>
+            </button>
+            <input type="text" name="street" class="input-field mt30" title="Укажите улицу" placeholder="Введите название улицы">
+            <input type="text" name="building" class="input-field mt30" title="Укажите дом" placeholder="Номер дома">
+            <button class="btn btn-search mt30">Поиск</button>
+          </form>
+        </div>
+        <div class="main__activity">
+          <amp-carousel 
+            id="activity" 
+            layout="fixed-height"
+            height="384" 
+            type="slides"
+            autoplay
+            delay="3000"
+            on="slideChange:
+            AMP.setState({activitySelector:{current: event.index}})"
+          >
+            <div>
+              <div class="client-counter">
+                <div class="digit">5</div>
+                <div class="digit">2</div>
+                <div class="digit">7</div>
+                <div class="digit">7</div>
+                <div class="digit">1</div>
+              </div>
+              <h3 class="client-counter__title">
+                человек подключили интернет через наш сервис
+              </h3>
+            </div>
+            <div>
+              <h3 class="last-activity-title">Последняя активность</h3>
+              <ul class="last-activity">
+                <li class="last-activity-item">
+                  <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                  <h4 class="last-activity-item__title">Для интернета</h4>
+                  <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
+                  <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
+                </li>
+                <li class="last-activity-item">
+                    <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                    <h4 class="last-activity-item__title">Для интернета</h4>
+                    <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
+                    <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
+                </li>
+                <li class="last-activity-item">
+                    <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                    <h4 class="last-activity-item__title">Для интернета</h4>
+                    <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
+                    <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+                <div class="client-counter">
+                  <div class="digit">5</div>
+                  <div class="digit">2</div>
+                  <div class="digit">7</div>
+                  <div class="digit">7</div>
+                  <div class="digit">1</div>
+                </div>
+                <h3 class="client-counter__title">
+                  человек подключили интернет через наш сервис
+                </h3>
+              </div>
+              <div>
+                <h3 class="last-activity-title">Последняя активность</h3>
+                <ul class="last-activity">
+                  <li class="last-activity-item">
+                    <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                    <h4 class="last-activity-item__title">Для интернета везде</h4>
+                    <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
+                    <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
+                  </li>
+                  <li class="last-activity-item">
+                      <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                      <h4 class="last-activity-item__title">Для интернета везде</h4>
+                      <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
+                      <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
+                  </li>
+                  <li class="last-activity-item">
+                      <amp-img class="last-activity-item__logo" src="./assets/rt.gif" alt="Для интернета везде" title="Ростелеком - СПб" width="56" height="26"></amp-img>
+                      <h4 class="last-activity-item__title">Для интернета везде</h4>
+                      <p class="last-activity-item__subtitle">Ростелеком - СПБ</p>
+                      <p class="last-activity-item__subtitle">15:44 - 13-11-2019</p>
+                  </li>
+                </ul>
+              </div>
+          </amp-carousel>
+          <div class="dots">
+            <span class="current" [class]="activitySelector.current % 2 == 0 ? 'current' : ''"
+              tabindex="0"
+              role="button"
+              on="tap:activity.goToSlide(index=0)"
+            ></span>
+            <span [class]="activitySelector.current % 2 == 1 ? 'current' : ''"
+              tabindex="0"
+              role="button"
+              on="tap:activity.goToSlide(index=1)"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="additional">
+      <div class="b-center">
+        <ul class="additional-list">
+          <li class="additional-item">
+            <i class="icon icon-additional-1"></i>
+            <div>
+              <a class="additional-item__wrapper" href="#">
+                <h3 class="additional-item__title">Интернет для юр.лиц</h3>
+                <p class="additional-item__subtitle">Вы можете найти провайдера и разместить заявку на подключение интернета в офис на нашем сайте.</p>
+                <div class="additional-item__link">Подробнее</div>
+              </a>
+            </div>
+          </li>
+          <li class="additional-item">
+            <i class="icon icon-additional-2"></i>
+            <div>
+              <a class="additional-item__wrapper" href="#">
+                <h3 class="additional-item__title">Тест скорости интернета</h3>
+                <p class="additional-item__subtitle">Наш сервис поможет Вам быстро и просто измерить скорость Вашего интернет-соединения.</p>
+                <div class="additional-item__link">Подробнее</div>
+              </a>
+            </div>
+          </li>
+          <li class="additional-item">
+            <i class="icon icon-additional-3"></i>
+            <div>
+              <a class="additional-item__wrapper" href="#">
+                <h3 class="additional-item__title">Акции от провайдеров</h3>
+                <p class="additional-item__subtitle">Мы знаем абсолютно о всех акциях от интернет-провайдеров, все примечания и сноски.</p>
+                <div class="additional-item__link">Подробнее</div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="how-connect">
+      <div class="b-center">
+        <h2 class="how-connect__title">Как подключить интернет?</h2>
+        <ul class="how-connect-list">
+          <li class="how-connect-item">
+            <h3 class="how-connect-item__title">Укажите адрес вашего дома</h3>
+            <i class="icon icon-how-connect-1"></i>
+            <p class="how-connect-item__subtitle">Введите адрес и мы покажем всех провайдеров, доступных для подключения в Вашем доме</p>
+          </li>
+          <div class="how-connect__line"></div>
+          <li class="how-connect-item">
+            <h3 class="how-connect-item__title">Подберите подходящий тариф</h3>
+            <i class="icon icon-how-connect-2"></i>
+            <p class="how-connect-item__subtitle">Мы предоставим для Вас выгодные тарифы для домашнего интернета от самых крупных провайдеров</p>
+          </li>
+          <div class="how-connect__line"></div>
+          <li class="how-connect-item">
+            <h3 class="how-connect-item__title">Заполните короткую заявку</h3>
+            <i class="icon icon-how-connect-3"></i>
+            <p class="how-connect-item__subtitle">Оставьте заявку и с Вами свяжется наш менеджер и проконсультирует по вопросу подключения</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="about">
+      <div class="b-center">
+        <h2 class="about-title">Несколько слов о нашей компании</h2>
+        <p class="about-text">Интернет – неотъемлемый атрибут современного человека. Без него зачастую невозможна работа и общение. Мы привыкли задавать «мировой паутине» сотни вопросов и оперативно получать на них ответы. Для очень многих Интернет – единственный источник информации. А потому, когда качество услуг интернет-провайдера находится не на должном уровне, то клиент начинает испытывать дискомфорт...</p>
+        <amp-accordion class="sample" disable-session-states>
+          <section>
+            <h4><span class="show-more">Читать полностью</span> <span class="show-less">Скрыть</span></h4>
+            <p class="about-text">
+                ...и раздражение. Благо, в наше время жители крупных городов могут выбирать, с помощью какой компании им подключиться к сети. При этом определиться бывает непросто, так как, к примеру, интернет-провайдеры Санкт-Петербурга исчисляются десятками. Цель нашего ресурса – облегчить вам муки выбора. <br>В первую очередь необходимо определить, что вы собираетесь делать в Интернете. Если ваши потребности ограничиваются просмотром сайтов и отправлением электронной почты, то будет вполне достаточно скорости в 8 Мбит/с. Большинство онлайн игр, Skype или закачка небольших файлов потребуют 25 Мбит/с, а просмотр фильмов и активное скачивание больших объёмов информации предполагают скорость от 40 Мбит/с. <br>Среди интернет-провайдеров Санкт-Петербурга таких, которые предлагают подобные технические параметры подключения немало. Большинство из них используют технологии выделенной отптиковолоконной линии. В связи с этим возникает необходимость выяснить, какие действуют интернет-провайдеры по адресу вашего проживания. Если вы задались этим вопросом, то наш сайт – это лучшее место, где вы сможете получить на него ответ. У нас вы легко определите список интернет-провайдеров, которые готовы предоставить вам услуги, и сузите круг своих поисков. Впрочем, список доступных интернет-провайдеров по адресу предполагаемого проведения интернета может оказаться немал. Помимо технических параметров подключения и надёжности соединения мы рекомендуем вам также обратить внимание на ряд деталей: стоимость услуг, механизм возмещения времени, в течение которого Интернет отсутствовал, наличие и качество технической поддержки, список дополнительных услуг. Мы уверены, что тот уровень сервиса, который доступен сейчас в Санкт-Петербурге, удовлетворит любые запросы, а мы поможем вам без лишних затрат времени найти подходящего провайдера.
+            </p>
+          </section>
+        </amp-accordion>
+        <ul class="about-list">
+          <li class="about-item">
+            <i class="icon icon-about-1"></i>
+            <p class="about-item__caption">Поступление заявки напрямую в отдел монтажников</p>
+          </li>
+          <li class="about-item">
+            <i class="icon icon-about-2"></i>
+            <p class="about-item__caption">Уникальные и актуальные тарифы и акции от провайдеров</p>
+          </li>
+          <li class="about-item">
+            <i class="icon icon-about-3"></i>
+            <p class="about-item__caption">У нас Вам не нужно выжидать никаких телефонных очередей</p>
+          </li>
+          <li class="about-item">
+            <i class="icon icon-about-4"></i>
+            <p class="about-item__caption">Подключение Интернета в течение 1 дня или быстрее</p>
+          </li>
+          <li class="about-item">
+            <i class="icon icon-about-5"></i>
+            <p class="about-item__caption">Удобный выбор провайдера и тарифа в течение 10 минут</p>
+          </li>
+        </ul>
+        <button class="btn btn-transparent btn-about">Заказать консультацию специалиста</button>
+      </div>
+    </section>
+    <section class="providers">
+      <div class="b-center">
+        <h2 class="providers-title">Мы работаем с крупнейшими провайдерами</h2>
+        <p>
+          InetMe - это бесплатный сервис по подбору интернет провайдера, который помогает делать правильный выбор.<br>
+          Просто <a class="check-address" href="#">проверь свой адрес</a>  и подключай интернет по домашнему адресу на самых выгодных условиях!
+        </p>
+        <ul class="provider-list">
+          <li class="provider-item">
+            <a href="#">
+              <amp-img  layout="fixed" height="95" width="202" src="./assets/rt.gif"></amp-img>
+            </a>
+          </li>
+          <li class="provider-item">
+            <a href="#">
+              <amp-img  layout="fixed" height="95" width="202" src="./assets/sumtel.gif"></amp-img>
+            </a>
+          </li>
+          <li class="provider-item">
+            <a href="#">
+              <amp-img  layout="fixed" height="95" width="202" src="./assets/nbn.gif"></amp-img>
+            </a>
+          </li>
+          <li class="provider-item">
+            <a href="#">
+              <amp-img  layout="fixed" height="95" width="202" src="./assets/sky.gif"></amp-img>
+            </a>
+          </li>  
+        </ul>
+      </div>
+    </section>
+    <section class="popular">
+      <div class="b-center">
+        <h2 class="popular__title">Популярные тарифы / хиты подключений</h2>
+        <p class="popular__subtitle">Сегодня функционирование любой организации или офиса вне зависимости от ее размеров невозможно без Интернета. Сервис InetMe предлагает широкую линейку тарифных планов для абонентов, проживающих в многоквартирных домах или коттеджах. Мы поможем найти Вам лучшего провайдера в Вашем доме и беспрепятственно перейти на его услуги.</p>
+        <amp-carousel 
+          id="popular" 
+          layout="fixed-height"
+          height="412" 
+
+          type="slides"
+          autoplay
+          delay="3000"
+          on="slideChange:
+          AMP.setState({popularSelector:{current: event.index}})"
+        >
+          <div class="popular-item">
+            <h3 class="popular-item__title">Для интернета везде</h3>
+            <div>
+              <amp-img height="110" width="234" src="./assets/rt.gif"></amp-img>
+              <p class="popular-item__desc">Скорость: 150 мбит/с</p>
+              <p class="popular-item__desc">Цена: 598руб. мес.</p>
+              <span class="popular-item__internet">Моно-интернет</span>
+            </div>
+            <div class="popular-item__btns">
+              <button class="btn btn-secondary">Разместить заявку</button>
+              <button class="btn btn-primary">Проверить адрес</button>
+            </div>
+          </div>
+          <div class="popular-item">
+            <h3 class="popular-item__title">Для интернета везде</h3>
+            <div>
+              <amp-img height="110" width="234" src="./assets/rt.gif"></amp-img>
+              <p class="popular-item__desc">Скорость: 150 мбит/с</p>
+              <p class="popular-item__desc">Цена: 598руб. мес.</p>
+              <span class="popular-item__internet">Моно-интернет</span>
+            </div>
+            <div class="popular-item__btns">
+              <button class="btn btn-secondary">Разместить заявку</button>
+              <button class="btn btn-primary">Проверить адрес</button>
+            </div>
+          </div>
+          <div class="popular-item">
+            <h3 class="popular-item__title">Для интернета везде</h3>
+            <div>
+              <amp-img height="110" width="234" src="./assets/rt.gif"></amp-img>
+              <p class="popular-item__desc">Скорость: 150 мбит/с</p>
+              <p class="popular-item__desc">Цена: 598руб. мес.</p>
+              <span class="popular-item__internet">Моно-интернет</span>
+            </div>
+            <div class="popular-item__btns">
+              <button class="btn btn-secondary">Разместить заявку</button>
+              <button class="btn btn-primary">Проверить адрес</button>
+            </div>
+          </div>
+        </amp-carousel>
+        <div class="dots">
+          <span class="current" [class]="popularSelector.current == 0 ? 'current' : ''"
+            tabindex="0"
+            role="button"
+            on="tap:popular.goToSlide(index=0)"
+          ></span>
+          <span [class]="popularSelector.current == 1 ? 'current' : ''"
+            tabindex="0"
+            role="button"
+            on="tap:popular.goToSlide(index=1)"
+          ></span>
+          <span [class]="popularSelector.current == 2 ? 'current' : ''"
+            tabindex="0"
+            role="button"
+            on="tap:popular.goToSlide(index=2)"
+          ></span>
+        </div>
+        <button class="btn btn-transparent-secondary popular__btn">Заказать консультацию специалиста</button>
+      </div>
+    </section>
+    <section class="consultation">
+      <div class="b-center">
+        <h2 class="consultation__title">Начни экономить на интернете!</h2>
+        <p class="consultation__subtitle">Закажите обратный звонок специалиста, который даст Вам ответы на все возникшие вопросы, <br> а также бесплатно проконсультирует Вас по самым свежим тарифам!</p>
+        <div class="consultation-form">
+          <form method="POST">
+            <label class="radiobtn-container">
+              Узнать о новом подключении
+              <input type="radio" checked="checked" name="form_radio_SIMPLE_QUESTION_697" value="122">
+              <span class="checkmark"></span>
+            </label>
+            <label class="radiobtn-container">
+              Узнать о смене тарифа
+              <input type="radio" name="form_radio_SIMPLE_QUESTION_697" value="123">
+              <span class="checkmark"></span>
+            </label>
+            <div>
+              <input name="name" class="input-field mt10 consultation-form__input" required
+                type="text" placeholder="Ваше имя">
+              <input name="phone" class="input-field mt10 consultation-form__input" required
+                type="tel" placeholder="+7 (000) 000-0000" mask="+7_(000)_000-0000"
+                pattern="^[0-9\+\s\-\(\)]{17}$"
+              >
+            </div>
+            <div class="mt10">
+              <label class="inline radiobtn-container">
+                Я соглашаюсь с 
+                <a class="term-link" href="politika-konfidencialnosti/">политикой конфиденциальности</a>
+                <input type="checkbox" checked name="form_radio_SIMPLE_QUESTION_697" value="123">
+                <span class="checkbox"></span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-secondary mt20 f18 f400">Заказать звонок</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="best-offers text-align-center">
+      <div class="b-center">
+        <h2 class="f30 f400">Лучшие предложения от интернет провайдеров</h2>
+        <p class="f400 color-636363">Хотите летать на высоких скоростях или меньше платить за тариф на интернет, нужно Цифровое ТВ и оборудование? Для Вашего удобства мы предлагаем огромное количество акций от крупнейших интернет провайдеров, по которым вы сможете, подключить комплексный пакет услуг.</p>
+        <amp-carousel 
+          id="best" 
+          layout="responsive"
+          height="430" 
+          width="460"
+          type="slides"
+          autoplay
+          delay="3000"
+          on="slideChange:
+          bestSelector.toggle(index=event.index, value=true)"
+        >
+          <div class="best-item">
+            <div>
+              <amp-img layout="responsive" height="196" width="366" src="./assets/inet.webp"></amp-img>
+              <p>Виртуальная АТС и номера 8800 бесплатно, при подключении любого интернет-провайдера!</p>
+            </div>
+            <div class="best-item__btns">
+              <button class="btn btn-secondary mt10">Разместить заявку</button>
+              <button class="btn btn-primary mt10">Проверить адрес</button>
+            </div>
+            <div class="mt10">
+              <p class="best-item__desc f14 m0">Скорость: <span class="f500">150 мбит/с</strong></p>
+              <p class="best-item__desc m0">Цена: <span class="f500">598руб. мес.</span></p>
+            </div>
+          </div>
+          <div class="best-item">
+            <div>
+              <amp-img layout="responsive" height="196" width="366" src="./assets/inet.webp"></amp-img>
+              <p>Виртуальная АТС и номера 8800 бесплатно, при подключении любого интернет-провайдера!</p>
+            </div>
+            <div class="best-item__btns">
+              <button class="btn btn-secondary mt10">Разместить заявку</button>
+              <button class="btn btn-primary mt10">Проверить адрес</button>
+            </div>
+            <div class="mt10">
+              <p class="best-item__desc f14 m0">Скорость: <span class="f500">150 мбит/с</strong></p>
+              <p class="best-item__desc m0">Цена: <span class="f500">598руб. мес.</span></p>
+            </div>
+          </div>
+          <div class="best-item">
+            <div>
+              <amp-img layout="responsive" height="196" width="366" src="./assets/inet.webp"></amp-img>
+              <p>Виртуальная АТС и номера 8800 бесплатно, при подключении любого интернет-провайдера!</p>
+            </div>
+            <div class="best-item__btns">
+              <button class="btn btn-secondary mt10">Разместить заявку</button>
+              <button class="btn btn-primary mt10">Проверить адрес</button>
+            </div>
+            <div class="mt10">
+              <p class="best-item__desc f14 m0">Скорость: <span class="f500">150 мбит/с</strong></p>
+              <p class="best-item__desc m0">Цена: <span class="f500">598руб. мес.</span></p>
+            </div>
+          </div>
+        </amp-carousel>
+        <amp-selector id="bestSelector" class="dots"
+        on="select:best.goToSlide(index=event.targetOption)"
+        >
+          <span option="0" selected></span>
+          <span option="1"></span>
+          <span option="2"></span>
+        </amp-selector>
+        <button class="btn btn-transparent-secondary mt20">
+          Смотреть все акции от провайдеров
+        </button>
+      </div>
+    </section>
+    <section class="big-action text-align-center">
+      <div class="b-center">
+        <div>
+          <ul class="big-action-list">
+            <li class="big-action-item">
+              <i class="icon icon-big-action-1"></i>
+              <p class="f400">Какие провайдеры обслуживают Ваш дом?</p>
+            </li>
+            <li class="mt20 big-action-item">
+              <i class="icon icon-big-action-2"></i>
+              <p class="f400">Какой тариф выгоднее?</p>
+            </li>
+            <li class="mt20 big-action-item">
+              <i class="icon icon-big-action-3"></i>
+              <p class="f400">Подключайте интернет и телевидение</p>
+            </li>
+          </ul>
+        </div>
+        <div class="big-action__form">
+          <h3 class="color-white m0 f22 f400 ttnone">Выберете лучший интернет</h3>
+          <form method="POST">
+            <input type="text" class="input-field mt20 big-action__field" placeholder="Введите название улицы">
+            <div class="big-action__input">
+              <input type="text" class="input-field mt10 " placeholder="Номер дома">
+              <button type="submit" class="btn btn-search-secondary"></button>
+            </div>
+          </form>
+          <p class="mt30">Подключение домашнего интернета еще никогда не было таким удобным!</p>
+        </div>
+      </div>
+    </section>
+    <section class="last-connect text-align-center">
+      <div class="b-center">
+        <h2 class="f400 color-636363">Последние заявки на подключение интернета</h2>
+        <p>На нашем сайте сотни пользователей быстро находят качественный и выгодный интернет. Мы знаем о всех акциях и тарифах интернет провайдеров, все примечания и сноски. Спешите стать одними из тех счастливых пользователей, кто получает наслаждение от своего домашнего интернета.</p>
+        <ul class="last-connect-list ">
+          <li class="last-connect-item mt20">
+            <div class="ttnone f400 ">Скоростной с ТВ</div>
+            <div class="last-connect-item__desc mt20">
+              <amp-img width="100" height="47" src="./assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
+              <p class="color-7d7d7d m0 mt20">Скорость: <span class="color-363636">300 мбит/c</span></p>
+              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 руб./мес</span></p>
+              <i class="icon icon-geo mt20"></i>
+              <p class="f14">г. Москва</p>
+            </div>
+          </li>
+          <li class="last-connect-item mt20">
+            <div class="ttnone f400 ">Скоростной с ТВ</div>
+            <div class="last-connect-item__desc mt20">
+              <amp-img width="100" height="47" src="./assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
+              <p class="color-7d7d7d m0 mt20">Скорость: <span class="color-363636">300 мбит/c</span></p>
+              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 руб./мес</span></p>
+              <i class="icon icon-geo mt20"></i>
+              <p class="f14">г. Москва</p>
+            </div>
+          </li>
+          <li class="last-connect-item mt20">
+            <div class="ttnone f400 ">Скоростной с ТВ</div>
+            <div class="last-connect-item__desc mt20">
+              <amp-img width="100" height="47" src="./assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
+              <p class="color-7d7d7d m0 mt20">Скорость: <span class="color-363636">300 мбит/c</span></p>
+              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 руб./мес</span></p>
+              <i class="icon icon-geo mt20"></i>
+              <p class="f14">г. Москва</p>
+            </div>
+          </li>
+          <li class="last-connect-item mt20">
+            <div class="ttnone f400 ">Скоростной с ТВ</div>
+            <div class="last-connect-item__desc mt20">
+              <amp-img width="100" height="47" src="./assets/rt.gif" alt="Скоростной с ТВ"></amp-img>
+              <p class="color-7d7d7d m0 mt20">Скорость: <span class="color-363636">300 мбит/c</span></p>
+              <p class="color-7d7d7d m0">Цена: <span class="color-363636">599 руб./мес</span></p>
+              <i class="icon icon-geo mt20"></i>
+              <p class="f14">г. Москва</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="question color-white text-align-center">
+      <div class="b-center">
+        <h2 class="f30 f400 color-white">Остались вопросы? <br> задайте их!</h2>
+        <p>Если у Вас остались какие-либо вопросы, задайте их, наши консультанты перезвонят Вам <br> в течение 10 минут и ответят на все интересующие вопросы.</p>
+      </div>
+      <form method="POST">
+        <label class="radiobtn-container">
+          Узнать о новом подключении
+          <input type="radio" checked="checked" name="form_radio_SIMPLE_QUESTION_697" value="122">
+          <span class="checkmark"></span>
+        </label>
+        <label class="radiobtn-container">
+          Узнать о смене тарифа
+          <input type="radio" name="form_radio_SIMPLE_QUESTION_697" value="123">
+          <span class="checkmark"></span>
+        </label>
+        <div class="question-inputs">
+          <input name="name" class="input-field mt10 question-input" required
+            type="text" placeholder="Ваше имя*">
+          <input name="phone" class="input-field mt10 question-input" required
+            type="tel" placeholder="Ваш телефон*" mask="+7_(000)_000-0000"
+            pattern="^[0-9\+\s\-\(\)]{17}$"
+          >
+          <input name="email" class="input-field mt10 question-input" required
+            type="text" placeholder="Email">
+        </div>
+        <textarea name="comment" class="mt10" placeholder="Введите Ваш коментарий" cols="30" rows="10"></textarea>
+        <div class="mt10">
+          <label class="inline radiobtn-container">
+            Я соглашаюсь с 
+            <a class="term-link color-white" href="politika-konfidencialnosti/">политикой конфиденциальности</a>
+            <input type="checkbox" checked name="form_radio_SIMPLE_QUESTION_697" value="123">
+            <span class="checkbox"></span>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-question-form mt40 f400 f14 color-363636">Отправить</button>
+      </form>
+      <div class="social-block mt20">
+        <a href="https://vk.com/inetme" class="mr5">
+          <amp-img src="./assets/vk.webp" width="40" height="40"></amp-img>
+        </a>
+        <a href="https://www.facebook.com/inetme/" class="mr5">
+          <amp-img src="./assets/facebook.webp" width="40" height="40"></amp-img>
+        </a>
+        <a class="mr5" href="https://twitter.com/intent/tweet?original_referer=https://inetme.ru/&text=Поиск интернет-провайдеров по адресу&url=https://inetme.ru/">
+          <amp-img src="./assets/twitter.webp" width="40" height="40"></amp-img>
+        </a>
+        <a href="http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=https://inetme.ru/">
+          <amp-img src="./assets/ok.webp" width="40" height="40"></amp-img>
+        </a>
+      </div>
+    </section>
+    <section class="bottom-maps text-align-center">
+      <div class="b-center">
+        <h2 class="f28 f400 ttnone color-363636">Поиск доступных к подключению интернет провайдеров</h2>
+        <div class="main_form">
+          <form method="POST" id="search">
+            <button on="tap:city-form" class="input-field for-city mt30">
+              <i class="icon-geo-yellow mr5"></i>
+              <span class="for-city__link">Санкт-Петербург и область</span>
+            </button>
+            <input type="text" name="street" class="input-field mt30" title="Укажите улицу" placeholder="Введите название улицы">
+            <input type="text" name="building" class="input-field mt30" title="Укажите дом" placeholder="Номер дома">
+            <button class="btn btn-search mt30">Поиск</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer text-align-center">
+        <amp-img class="footer-logo" width="232" height="68" src="./assets/logo.png"></amp-img>
+        <div class="b-center">
+          <ul class="footer-menu">
+            <li class="footer-menu__item"><a class="ttup f12 color-link tdnone" href="/spb/aktsii-internet-provayderov/" title="Акции от провайдеров">Акции от провайдеров</a></li>
+            <li class="footer-menu__item"><a class="ttup f12 color-link tdnone" href="/spb/otzivi-o-provayderah/" title="Отзывы о провайдерах">Отзывы о провайдерах</a></li>
+            <li class="footer-menu__item"><a class="ttup f12 color-link tdnone" href="/spb/rating-internet-provayderov/" title="Рейтинг провайдеров">Рейтинг провайдеров</a></li>
+            <li class="footer-menu__item"><a class="ttup f12 color-link tdnone" href="/spb/internet-provayderi/" title="Список провайдеров">Список провайдеров</a></li>
+            <li class="footer-menu__item"><a class="ttup f12 color-link tdnone" href="/spb/internet-provayderi-po-adresu/" title="Охват провайдеров">Охват провайдеров</a></li>
+            <li class="footer-menu__item"><a class="ttup f12 color-link tdnone" href="/spb/tarify-provayderov/">Тарифы провайдеров</a></li>
+            <li class="footer-menu__item"><a class="ttup f12 color-link tdnone" href="/stati/" title="Новости интернет-провайдеров">Статьи</a></li>
+          </ul>
+          <div class="footer-contacts px10">
+            <i class="icon icon-communication"></i>
+            <p class="footer-contacts__help f12 color-7d7d7d m0 mt6">Справки по телефону:</p>
+            <p class="footer-contacts__phone f24 color-363636 m0 mt6">+7 (812) 612-44-02</p>
+            <p class="footer-contacts__time f14 color-7d7d7d">В Санкт-Петербурге и Ленинградской области сейчас 09:10</p>
+          </div>
+          <div class="f14 color-7d7d7d">
+            <p>Введите адрес или укажите место на карте. Система выдаст список тарифов доступных провайдеров - проводного Интернета.
+              Выберите подходящий тариф и закажите подключение. Нет времени разбираться, закажите консультацию специалиста.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom text-align-center">
+        <div class="b-center">
+          <a class="footer-bottom__link tdnone" href="/add-provider/" rel="nofollow">Добавить провайдера</a>
+          <a class="footer-bottom__link tdnone" href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+          <a class="footer-bottom__link tdnone" href="/about/">Реквизиты организации</a>
+          <a class="footer-bottom__link tdnone" href="/contacts/">Контакты</a>
+          <a class="footer-bottom__link tdnone" href="/cabinet/login.php" rel="nofollow">
+            Войти
+          </a>
+          <p class="f13 color-818b96 m0 mt20">© 2013-2019 «InetMe»</p>
+        </div>
+      </div>
+    </footer>
+    <amp-lightbox id="city-form" layout="nodisplay" scrollable>
+      <div class="lightbox">
+        <div class="lightbox-base" role="button" tabindex="-1" on="tap:city-form.close"></div>
+        <div class="lightbox-content p15 mt40">
+          <div class="city-form">
+            <a role="button" class="close-reveal-modal" tabindex="-0" on="tap:city-form.close">×</a>
+            <form id="city" method="POST">
+              <amp-autocomplete filter="substring" src="js/city.json" on="select:city.submit">
+                <input>
+              </amp-autocomplete>
+              <div class="mt20">
+                <li class="dontsplit">
+                    <div class="city-sym">А</div>
+                    <ul class="cities-sym">
+                        <li><a href="/khakasiya-resp/">Абакан и обл.</a></li>
+                        <li><a href="/chukotka/">Анадырь и округ</a></li>
+                        <li><a href="/arkhangelskaya-obl/">Архангельск и обл.</a></li>
+                        <li><a href="/astrakhanskaya-obl/">Астрахань и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Б</div>
+                    <ul class="cities-sym">
+                        <li><a href="/altayskiy-kr/">Барнаул и обл.</a></li>
+                        <li><a href="/belgorodskaya-obl/">Белгород и обл.</a></li>
+                        <li><a href="/eao/">Биробиджан и обл.</a></li>
+                        <li><a href="/amurskaya-obl/">Благовещенск и обл.</a></li>
+                        <li><a href="/bryanskaya-obl/">Брянск и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">В</div>
+                    <ul class="cities-sym">
+                        <li><a href="/novgorodskaya-obl/">Великий Новгород и обл.</a></li>
+                        <li><a href="/primorskiy-kr/">Владивосток и обл.</a></li>
+                        <li><a href="/severnaya-osetiya/">Владикавказ и обл.</a></li>
+                        <li><a href="/vladimirskaya-obl/">Владимир и обл.</a></li>
+                        <li><a href="/volgogradskaya-obl/">Волгоград и обл.</a></li>
+                        <li><a href="/vologodskaya-obl/">Вологда и обл.</a></li>
+                        <li><a href="/voronezhskaya-obl/">Воронеж и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Е</div>
+                    <ul class="cities-sym">
+                        <li><a href="/sverdlovskaya-obl/">Екатеринбург и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">И</div>
+                    <ul class="cities-sym">
+                        <li><a href="/ivanovskaya-obl/">Иваново и обл.</a></li>
+                        <li><a href="/udmurtiya-resp/">Ижевск и обл.</a></li>
+                        <li><a href="/ingushetiya/">Ингушетия</a></li>
+                        <li><a href="/irkutskaya-obl/">Иркутск и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Й</div>
+                    <ul class="cities-sym">
+                        <li><a href="/mariy-el-resp/">Йошкар-Ола и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">К</div>
+                    <ul class="cities-sym">
+                        <li><a href="/tatarstan-resp/">Казань и обл.</a></li>
+                        <li><a href="/kaliningradskaya-obl/">Калининград и обл.</a></li>
+                        <li><a href="/kaluzhskaya-obl/">Калуга и обл.</a></li>
+                        <li><a href="/kemerovskaya-obl/">Кемерово и обл.</a></li>
+                        <li><a href="/kirovskaya-obl/">Киров и обл.</a></li>
+                        <li><a href="/kostromskaya-obl/">Кострома и обл.</a></li>
+                        <li><a href="/krasnodarskiy-kr/">Краснодар и обл.</a></li>
+                        <li><a href="/krasnoyarskiy-kr/">Красноярск и обл.</a></li>
+                        <li><a href="/kurganskaya-obl/">Курган и обл.</a></li>
+                        <li><a href="/kurskaya-obl/">Курск и обл.</a></li>
+                        <li><a href="/tyva-resp/">Кызыл и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Л</div>
+                    <ul class="cities-sym">
+                        <li><a href="/lipetskaya-obl/">Липецк и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">М</div>
+                    <ul class="cities-sym">
+                        <li><a href="/magadanskaya-obl/">Магадан и обл.</a></li>
+                        <li><a href="/adygeya/">Майкоп и обл.</a></li>
+                        <li><a href="/dagestan/">Махачкала и обл.</a></li>
+                        <li><a href="/msk/">Москва и обл.</a></li>
+                        <li><a href="/murmanskaya-obl/">Мурманск и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Н</div>
+                    <ul class="cities-sym">
+                        <li><a href="/kabardino-balkariya/">Нальчик и обл.</a></li>
+                        <li><a href="/nizhegorodskaya-obl/">Нижний Новгород и обл.</a></li>
+                        <li><a href="/novosibirskaya-obl/">Новосибирск и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">О</div>
+                    <ul class="cities-sym">
+                        <li><a href="/omskaya-obl/">Омск и обл.</a></li>
+                        <li><a href="/orlovskaya-obl/">Орел и обл.</a></li>
+                        <li><a href="/orenburgskaya-obl/">Оренбург и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">П</div>
+                    <ul class="cities-sym">
+                        <li><a href="/penzenskaya-obl/">Пенза и обл.</a></li>
+                        <li><a href="/permskiy-kr/">Пермь и обл.</a></li>
+                        <li><a href="/kareliya/">Петрозаводск и обл.</a></li>
+                        <li><a href="/kamchatskiy-kr/">Петропавловск-Камчатский и обл.</a></li>
+                        <li><a href="/pskovskaya-obl/">Псков и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Р</div>
+                    <ul class="cities-sym">
+                        <li><a href="/rostovskaya-obl/">Ростов-на-Дону и обл.</a></li>
+                        <li><a href="/ryazanskaya-obl/">Рязань и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">С</div>
+                    <ul class="cities-sym">
+                        <li><a href="/samarskaya-obl/">Самара и обл.</a></li>
+                        <li><a href="/">Санкт-Петербург и обл.</a></li>
+                        <li><a href="/mordoviya-resp/">Саранск и обл.</a></li>
+                        <li><a href="/saratovskaya-obl/">Саратов и обл.</a></li>
+                        <li><a href="/sevastopol/">Севастополь и обл.</a></li>
+                        <li><a href="/krym-resp/">Симферополь и обл.</a></li>
+                        <li><a href="/smolenskaya-obl/">Смоленск и обл.</a></li>
+                        <li><a href="/stavropolskiy-kr/">Ставрополь и обл.</a></li>
+                        <li><a href="/komi-resp/">Сыктывкар и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Т</div>
+                    <ul class="cities-sym">
+                        <li><a href="/tambovskaya-obl/">Тамбов и обл.</a></li>
+                        <li><a href="/tverskaya-obl/">Тверь и обл.</a></li>
+                        <li><a href="/tomskaya-obl/">Томск и обл.</a></li>
+                        <li><a href="/tulskaya-obl/">Тула и обл.</a></li>
+                        <li><a href="/tyumenskaya-obl/">Тюмень и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">У</div>
+                    <ul class="cities-sym">
+                        <li><a href="/buryatiya-resp/">Улан-Удэ и обл.</a></li>
+                        <li><a href="/ulianovskaya-obl/">Ульяновск и обл.</a></li>
+                        <li><a href="/bashkortostan/">Уфа и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Х</div>
+                    <ul class="cities-sym">
+                        <li><a href="/khabarovskiy-kr/">Хабаровск и обл.</a></li>
+                        <li><a href="/yugra/">Ханты-Мансийский автономный округ - Югра</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Ч</div>
+                    <ul class="cities-sym">
+                        <li><a href="/chuvashskaya-resp/">Чебоксары и обл.</a></li>
+                        <li><a href="/chelyabinskaya-obl/">Челябинск и обл.</a></li>
+                        <li><a href="/karachayevo-cherkesiya/">Черкесск и обл.</a></li>
+                        <li><a href="/chitinskaya-obl/">Чита и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Э</div>
+                    <ul class="cities-sym">
+                        <li><a href="/kalmykiya/">Элиста и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Ю</div>
+                    <ul class="cities-sym">
+                        <li><a href="/sakhalinskaya-obl/">Южно-Сахалинск и обл.</a></li>
+                    </ul>
+                </li>
+                <li class="dontsplit">
+                    <div class="city-sym">Я</div>
+                    <ul class="cities-sym">
+                        <li><a href="/sakha-yakutiya-resp/">Якутск и обл.</a></li>
+                        <li><a href="/yamalo-nenetskiy-ao/">Ямало-Ненецкий автономный округ</a></li>
+                        <li><a href="/yaroslavskaya-obl/">Ярославль и обл.</a></li>
+                    </ul>
+                </li>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </amp-lightbox>
+  </body>
+</html>
